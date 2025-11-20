@@ -1,8 +1,15 @@
-# A module that automatically imports everything else in the parent folder.
+{ config, lib, pkgs, ... }:
 {
-  imports =
-    with builtins;
-    map
-      (fn: ./${fn})
-      (filter (fn: fn != "default.nix") (attrNames (readDir ./.)));
+  imports = [
+    ./code-editors
+    ./browsers
+    ./direnv.nix
+    ./git.nix
+    ./nix-index.nix
+    ./packages.nix
+    ./gc.nix
+    ./me.nix
+    ./nix.nix
+    ./shell.nix
+  ];
 }

@@ -1,4 +1,4 @@
-{ flake, ... }:
+{ flake, pkgs, ... }:
 let
   inherit (flake) inputs;
   inherit (inputs) self;
@@ -13,8 +13,22 @@ in
   me = {
     username = "jarvis394";
     fullname = "Vladislav Ekushev";
-    email = "johndoe@nixos.com";
+    email = "tarnatovski@gmail.com";
   };
 
-  home.stateVersion = "25.05";
+  home.packages = with pkgs; [
+    discord
+    telegram-desktop
+  ];
+
+  browsers = {
+    chromium.enable = true;
+    #firefox.enable = true;
+  };
+
+  code-editors = {
+    vscode.enable = true;
+  };
+
+  home.stateVersion = "25.11";
 }
