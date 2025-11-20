@@ -1,1 +1,97 @@
-{}
+{
+  // Внешний вид редактора
+  "editor.fontSize": 16,
+  "editor.fontFamily": "Fira Code Retina, Fira Code, Consolas, 'Courier New', monospace",
+  "editor.wordWrap": "off",
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.cursorBlinking": "blink",
+  "editor.glyphMargin": true,
+  "editor.linkedEditing": true,
+  "editor.padding.top": 16,
+  "editor.occurrencesHighlight": "singleFile",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.unicodeHighlight.allowedLocales": {
+    "en": true,
+    "ru": true
+  },
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.renderWhitespace": "none",
+  "editor.stickyScroll.enabled": true,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+
+  // Терминал
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontSize": 16,
+
+  // Форматирование и Prettier
+  "prettier.useTabs": false,
+  "prettier.semi": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "always",
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+
+  // Git
+  "gitlens.views.remotes.branches.layout": "list",
+
+  // JSON
+  "json.schemaDownload.enable": true,
+  "http.proxySupport": "fallback",
+
+  // Svelte
+  "svelte.ask-to-enable-ts-plugin": false,
+  "svelte.enable-ts-plugin": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+
+  // Python
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+
+  // Nix
+  "nix.formatterPath": "nixpkgs-fmt",
+  "[nix]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+
+  // Разное
+  "security.workspace.trust.untrustedFiles": "open",
+  "nxConsole.showNodeVersionOnStartup": false,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "typescript.tsserver.maxTsServerMemory": 4096,
+  "diffEditor.codeLens": true,
+  "chat.commandCenter.enabled": false,
+
+  // Telemetry
+  "redhat.telemetry.enabled": false
+}

@@ -31,6 +31,16 @@ let
 
 in
 packageOverlays // {
+  systems.modules.nixpkgs = {
+    overlays = [
+      (final: prev: {
+        stable = import inputs.nixpkgs-stable {
+          system = final.system;
+          config = final.config;
+        };
+      })
+    ];
+  };
   # External overlays
   #nur = nur.overlays.default;
   #vscode-extensions = vscode-extensions.overlays.default;

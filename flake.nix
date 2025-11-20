@@ -39,6 +39,5 @@
 
   # Wired using https://nixos-unified.org/guide/#outputs
   outputs = inputs:
-    inputs.nixos-unified.lib.mkFlake
-      { inherit inputs; root = ./.; };
+    inputs.nixos-unified.lib.mkFlake { inherit inputs; root = ./.; };
 }
