@@ -1,7 +1,10 @@
 {
   // Внешний вид редактора
   "editor.fontSize": 16,
-  "editor.fontFamily": "Fira Code Retina, Fira Code, Consolas, 'Courier New', monospace",
+  "editor.guides.bracketPairs": "active",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "Fira Code Retina, 'Fira Code', Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   "editor.wordWrap": "off",
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.cursorBlinking": "blink",
@@ -27,17 +30,22 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.renderWhitespace": "none",
   "editor.stickyScroll.enabled": true,
+  "editor.smoothScrolling": true,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "window.titleBarStyle": "custom",
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "welcomePage",
+  "workbench.tree.indent": 16,
 
   // Терминал
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.allowChords": false,
+  "emmet.showAbbreviationSuggestions": false,
 
   // Форматирование и Prettier
   "prettier.useTabs": false,
@@ -52,6 +60,8 @@
 
   // Git
   "gitlens.views.remotes.branches.layout": "list",
+  "git.ignoreMissingGitWarning": true,
+  "git.autofetch": true,
 
   // JSON
   "json.schemaDownload.enable": true,
@@ -65,6 +75,7 @@
   },
 
   // Python
+  "python.analysis.typeCheckingMode": "standard",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
