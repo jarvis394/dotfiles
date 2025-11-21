@@ -52,6 +52,8 @@ in
       imports = [ (self + /configurations/home/${name}.nix) ];
     });
 
+    home-manager.backupFileExtension = ".bak";
+
     # All users can add Nix caches.
     nix.settings.trusted-users = [
       "root"
