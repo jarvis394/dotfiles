@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   options = {
@@ -6,7 +11,6 @@
   };
 
   config = lib.mkIf config.browsers.firefox.enable {
-
     programs.firefox = {
       enable = true;
       package = pkgs.firefox;
@@ -81,25 +85,17 @@
             "9000".enable = true;
           };
 
-          extensions.packages = lib.mkDefault (with pkgs.nur.repos.rycee.firefox-addons; [
-            ublock-origin
-            bitwarden
-            skip-redirect
-            user-agent-string-switcher
-          ]);
+          extensions.packages = lib.mkDefault (
+            with pkgs.nur.repos.rycee.firefox-addons;
+            [
+              ublock-origin
+              bitwarden
+              skip-redirect
+              user-agent-string-switcher
+            ]
+          );
         };
       };
     };
-
-    #xdg.mimeApps = {
-    #  defaultApplications = {
-    #    "text/html" = [ "firefox.desktop" ];
-    #    "application/xhtml+xml" = [ "firefox.desktop" ];
-    #    "x-scheme-handler/http" = [ "firefox.desktop" ];
-    #    "x-scheme-handler/https" = [ "firefox.desktop" ];
-    #    "x-scheme-handler/ftp" = [ "firefox.desktop" ];
-    #    "application/pdf" = [ "firefox.desktop" ];
-    #  };
-    #};
   };
 }

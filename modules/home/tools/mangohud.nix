@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  ...
+}:
+
 {
   options.tools.mangohud.enable = lib.mkEnableOption "Enable MangoHud";
 

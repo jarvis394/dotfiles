@@ -3,7 +3,7 @@
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
-  
+
     # Principle inputs (updated by `nix run .#update`)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -14,8 +14,18 @@
     nixos-unified.url = "github:srid/nixos-unified";
 
     # Software inputs
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    # Fork with flake support https://github.com/gvolpe/nix-index/pull/1
+    nix-index = {
+      url = "github:gvolpe/nix-index";
+      inputs.nix-index-database.follows = "nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:gvolpe/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
@@ -28,9 +38,8 @@
 
     arkenfox-nixos = {
       url = "github:dwarfmaster/arkenfox-nixos";
-      flake = false;
     };
-    
+
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";

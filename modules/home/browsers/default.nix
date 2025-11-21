@@ -1,7 +1,7 @@
-{ config, lib, ... }:
 {
   imports = [
     ./chromium.nix
-    #./firefox.nix
+    ./google-chrome.nix
+    ./firefox.nix
   ];
 }

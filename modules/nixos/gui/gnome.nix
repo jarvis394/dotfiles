@@ -5,7 +5,7 @@
     desktopManager.gnome.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     pkgs.gnome-tweaks
   ];
 }

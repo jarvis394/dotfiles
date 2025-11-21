@@ -1,8 +1,9 @@
-{ config, lib, pkgs, ... }:
 {
   imports = [
     ./code-editors
     ./browsers
+    ./tools
+    ./games
     ./direnv.nix
     ./git.nix
     ./nix-index.nix

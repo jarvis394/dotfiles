@@ -18,7 +18,7 @@
     nil # Nix language server
     nix-info
     nixpkgs-fmt
-
+    nixfmt-rfc-style
 
     # On ubuntu, we need this less for `man home-configuration.nix`'s pager to
     # work.
@@ -31,7 +31,14 @@
     # Better `cat`
     bat.enable = true;
     # Type `<ctrl> + r` to fuzzy search your shell history
-    fzf.enable = true;
+    fzf = {
+      enable = true;
+      enableFishIntegration = false; # broken
+      defaultCommand = "fd --type file --follow"; # FZF_DEFAULT_COMMAND
+      defaultOptions = [ "--height 30%" ]; # FZF_DEFAULT_OPTS
+      fileWidgetCommand = "fd --type file --follow"; # FZF_CTRL_T_COMMAND
+    };
+
     jq.enable = true;
     # Install btop https://github.com/aristocratos/btop
     btop.enable = true;

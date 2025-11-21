@@ -4,7 +4,7 @@
     g = "git";
     lg = "lazygit";
   };
-  
+
   home.packages = with pkgs; [
     git-lfs
     git-credential-manager
@@ -16,7 +16,10 @@
       enable = true;
       lfs.enable = true;
       package = pkgs.gitFull;
-      ignores = [ "*~" "*.swp" ];
+      ignores = [
+        "*~"
+        "*.swp"
+      ];
       settings = {
         user = {
           name = config.me.fullname;

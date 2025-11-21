@@ -1,10 +1,24 @@
-# This is your nixos configuration.
-# For home configuration, see /modules/home/*
-{ flake, ... }:
+# Configuration common to all Linux systems
+{
+  flake,
+  pkgs,
+  ...
+}:
+
+let
+  inherit (flake) inputs;
+  inherit (inputs) self;
+in
 {
   imports = [
-    flake.inputs.self.nixosModules.common
-    flake.inputs.self.nixosModules.gaming
+    {
+      home-manager.sharedModules = [
+        inputs.nix-index.homeManagerModules.${pkgs.system}.default
+        self.homeModules.default
+        inputs.arkenfox-nixos.hmModules.arkenfox
+      ];
+    }
+    self.nixosModules.common
+    self.nixosModules.gaming
   ];
-  services.openssh.enable = true;
 }

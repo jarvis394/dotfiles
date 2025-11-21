@@ -1,4 +1,3 @@
-{ config, pkgs, ... }:
 {
   # https://nixos.asia/en/direnv
   programs.direnv = {

@@ -1,18 +1,19 @@
-{ flake, ... }:
+# Platform-independent terminal setup
+{ flake, pkgs, ... }:
+
+let
+  inherit (flake) inputs;
+in
 {
-  imports = [
-    # NOTE: The nix-index DB is slow to search, until
-    # https://github.com/nix-community/nix-index-database/issues/130
-    flake.inputs.nix-index-database.hmModules.nix-index
-  ];
-
-  # command-not-found handler to suggest nix way of installing stuff.
-  # FIXME: This ought to show new nix cli commands though:
-  # https://github.com/nix-community/nix-index/issues/191
-  programs.nix-index = {
-    enable = true;
-    enableZshIntegration = true;
+  programs = {
+    # Command not found handler based on nixpkgs
+    nix-index-fork = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNixCommand = true;
+      package = inputs.nix-index.packages.${pkgs.system}.default;
+      database = inputs.nix-index-database.packages.${pkgs.system}.nix-index-small-database;
+    };
+    command-not-found.enable = false;
   };
-  programs.nix-index-database.comma.enable = true;
-
 }

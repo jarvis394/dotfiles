@@ -1,5 +1,5 @@
 {
   imports = [
-    ./vscode
+    ./osu-lazer.nix
   ];
 }

@@ -23,11 +23,20 @@ in
 
   browsers = {
     chromium.enable = true;
-    #firefox.enable = true;
+    google-chrome.enable = true;
+    firefox.enable = true;
   };
 
   code-editors = {
     vscode.enable = true;
+  };
+
+  games = {
+    osu-lazer.enable = true;
+  };
+
+  tools = {
+    mangohud.enable = true;
   };
 
   home.stateVersion = "25.11";

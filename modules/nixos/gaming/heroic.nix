@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.gaming.heroic.enable = lib.mkEnableOption "Enable Heroic launcher";
